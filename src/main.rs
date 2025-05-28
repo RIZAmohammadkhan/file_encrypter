@@ -313,7 +313,9 @@ impl eframe::App for FileEncrypterApp {
             }
              ui.add_space(20.0); ui.separator();
              ui.horizontal(|ui| { 
-                if ui.link("Source Code (Placeholder)").clicked() { /* TODO: Open link */ }
+                if ui.link("Source Code").clicked() {
+                    ui.ctx().open_url(egui::output::OpenUrl::new_tab("https://github.com/RIZAmohammadkhan/file_encrypter"));
+                }
                 ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
                     ui.label(format!("v{}", env!("CARGO_PKG_VERSION"))); 
                     egui::warn_if_debug_build(ui);
