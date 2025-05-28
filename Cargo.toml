@@ -1,0 +1,21 @@
+[package]
+name = "file_encrypter"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+aes-gcm = "0.10"
+argon2 = "0.5"
+rand = "0.8"
+sha2 = "0.10"
+serde = { version = "1.0", features = ["derive"] }
+bincode = "1.3"
+hex = "0.4" # For debugging/logging hashes if needed
+
+# For PDF disguise
+printpdf = "0.6"
+# lopdf = "0.31" # Not strictly needed with current printpdf append approach
+
+# For GUI
+eframe = { version = "0.27", features = ["persistence"] } # Using latest eframe as of writing
+rfd = "0.14" # Rust File Dialogs
