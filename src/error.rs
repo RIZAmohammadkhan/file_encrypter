@@ -7,6 +7,7 @@ pub enum EncryptError {
     Argon2(argon2::Error),
     Bincode(bincode::Error),
     Pdf(printpdf::Error),
+    PdfCreationLogicError(String), // <<< ADDED THIS VARIANT
     InvalidFileFormat(String),
     PasswordIncorrect,
     MaxAttemptsReached,
@@ -25,6 +26,7 @@ impl fmt::Display for EncryptError {
             EncryptError::Argon2(e) => write!(f, "Key Derivation Error: {}", e),
             EncryptError::Bincode(e) => write!(f, "Serialization Error: {}", e),
             EncryptError::Pdf(e) => write!(f, "PDF Generation Error: {}", e),
+            EncryptError::PdfCreationLogicError(s) => write!(f, "PDF Creation Logic Error: {}", s), // <<< ADDED DISPLAY FOR IT
             EncryptError::InvalidFileFormat(s) => write!(f, "Invalid File Format: {}", s),
             EncryptError::PasswordIncorrect => write!(f, "Password incorrect. Attempts remaining will be reduced."),
             EncryptError::MaxAttemptsReached => write!(f, "Maximum decryption attempts reached. File is now locked/corrupted."),
