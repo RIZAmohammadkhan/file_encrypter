@@ -119,5 +119,5 @@ The project relies on several high-quality Rust crates:
 ## Future Enhancements (Potential)
 
 *   Stream processing for very large files to reduce memory usage.
-*   More advanced steganography for PDF disguise (significantly more complex).
+*   More advanced steganography for PDF disguise.
 *   Command-line interface (CLI) version.

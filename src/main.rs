@@ -287,7 +287,7 @@ impl eframe::App for FileEncrypterApp {
             if self.mode == AppMode::Encrypt && self.disguise_as_pdf {
                 ui.add_space(5.0);
                 ui.indent("pdf_text_indent", |ui| {
-                    ui.label("PDF Display Text (auto-wraps in PDF):");
+                    ui.label("PDF Display Text (**bold**, *italics*):");
                     ui.add(egui::TextEdit::multiline(&mut self.pdf_display_text).desired_rows(4).desired_width(f32::INFINITY).hint_text("Enter text that will be visible in the placeholder PDF..."));
                 });
             }
